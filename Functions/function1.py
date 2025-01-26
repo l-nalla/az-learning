@@ -24,4 +24,34 @@ print(sum_of_list([2,3,5,7], 0)) # position based argument passing
 def greet():
   return "Hello!"
 
-# print(greet(), "world")
+
+
+# args 
+print(greet(), "world")
+
+# args - arguments, *args, **kwargs
+# *args is going to be a collection of arguments 
+
+# Example
+
+# sum of any number of values which given to function
+
+def sum_of_any_vals(*vals):
+
+  sum = 0
+  for i in vals:
+    if isinstance(i, int):
+      sum += i
+  return sum
+
+print(f"Sum of all arguments passed to function {sum_of_any_vals(1,2,3,'ni',6,6)}")
+
+# combination normal args and *args
+def test_normal_args_and_starargs(sum, *vals):
+  initial_sum = sum
+  for i in vals:
+    sum += i
+  return f"sum of all values passed to function is {sum} and initial value of sum is {initial_sum}"
+
+print(test_normal_args_and_starargs(0, 1,2,3,4,5,6,7,7,8))
+
